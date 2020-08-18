@@ -120,6 +120,7 @@ export class NBSnapper {
     return this.login()
       .wait(1000)
       .goto(this.nb.url + '/admin/backups')
+      .wait(10000)
       .evaluate((name) => {
         // hijack confirm
         window.confirm = function(msg) { return true; }
